@@ -1,3 +1,7 @@
+% this is extra code that you can examine to demonstrate a couple of 
+% another things we can do with our LED setup. Time permitting try 
+% this code out and play around with changing it. 
+
 % Before running this code, connect to the Arduino using the command
 % a = arduino('COM3'); 
 % Note: your COM port may be different
@@ -16,24 +20,26 @@ for n = 1:15,
         dv = mod(n,2);
         digitalWrite(a, myLED_pin_list(k), dv);
     end
+    % notice that the pause statement is after all LED values are set and NOT in 
+    % the innder FOR loop
     pause(0.2);
 end
 
-pause(1);
 fprintf('Turning off all lights\n');
 for k = 1:4, 
     digitalWrite(a, myLED_pin_list(k), 0);
 end
+pause(1);
 
 fprintf('Chasing light sequence\n');
-pause(1);
 % Chasing light sequence
-for n = 1:3,
-    for k = 1:4, 
+for n = 1:10,
+    for k = [1 2 3 4 3 2], 
         % use the mod function to set dv to 1 when n is odd and to 0 when n is event
         digitalWrite(a, myLED_pin_list(k), 1);
-        pause(0.2);
+        % notice this pause statement and one below are both in the inner FOR loop
+        pause(0.05);
         digitalWrite(a, myLED_pin_list(k), 0);
-        pause(0.2);
+        pause(0.05);
     end
 end
