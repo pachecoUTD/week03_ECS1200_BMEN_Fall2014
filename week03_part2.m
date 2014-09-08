@@ -29,7 +29,7 @@ timeOff_sec = (1 / flash_rate_Hz) / 2;
 for k = 1:nflashes, 
     % Use the Matlab Arduino function digitalWrite to set the pins HIGH or LOW
     
-    % Complete the complete to set pin 13 HIGH so that LED turns ON
+    % Complete the code to set pin 13 HIGH so that LED turns ON
     digitalWrite(a,onboard_LED_pin_number,??);
     
     % pause for timeOn 
