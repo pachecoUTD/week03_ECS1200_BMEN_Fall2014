@@ -35,10 +35,11 @@ fprintf('Chasing light sequence\n');
 % Chasing light sequence
 for n = 1:10,
     for k = [1 2 3 4 3 2], 
-        % use the mod function to set dv to 1 when n is odd and to 0 when n is event
+        % set to HIGH - turn on LED
         digitalWrite(a, myLED_pin_list(k), 1);
         % notice this pause statement and one below are both in the inner FOR loop
         pause(0.05);
+        % set to LOW - turn off LED
         digitalWrite(a, myLED_pin_list(k), 0);
         pause(0.05);
     end
