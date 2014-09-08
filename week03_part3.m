@@ -14,13 +14,14 @@ end
 % in order from highest to lowest 
 powers2 = [8 4 2 1];
 
-for number = 15, 
+for n = 0 : 15,
+    number = n;
+
     % store the digits of the binary number in a vector named 'bits'
-    testNumber = 0;
     for k = 1:4,
-        if number >= (powers2(k)+testNumber)
+        if number >= powers2(k)
             bits(k) = 1;
-            testNumber = testNumber + powers2(k);
+            number = number - powers2(k);
         else
             bits(k) = 0;
         end
@@ -34,7 +35,7 @@ for number = 15,
     end
     
     % display the result to the screen
-    fprintf('Currently displaying the number %d (%d%d%d%d) on the LEDs\n', number, bits);
+    fprintf('Currently displaying the number %d (%d%d%d%d) on the LEDs\n', n, bits);
     
     pause(1);
 end

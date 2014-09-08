@@ -1,0 +1,7 @@
+fprintf('Welcome to Week #3 of ECS1200 for Bioengineering\n');
+
+% determine the Arduino comport
+serialInfo = instrhwinfo('serial')
+
+if 
+ 
